@@ -25,10 +25,18 @@ public class UserController {
         User user = userService.save(userDto);
         return ResponseEntity.status(HttpStatus.CREATED).body(user);
     }
+
+    @GetMapping("/user/create")
+    public ResponseEntity<User> getUser(Long userId){
+        Optional<User> optionalUser= userRepository.findById(userId);
+        return ResponseEntity.status(HttpStatus.CREATED).body(optionalUser.get());
+    }
     @GetMapping("/user")
     public Optional<User> check(Long id){
         Optional<User> byId =userRepository.findById(id);
         return byId;
     }
+
+
 }
 
