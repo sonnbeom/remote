@@ -36,7 +36,10 @@ public class UserController {
         Optional<User> byId =userRepository.findById(id);
         return byId;
     }
-
-
+//    @GetMapping("/user")
+//    public Optional<User> check(Long id){
+//        Optional<User> byId =userRepository.findById(id);
+//        return byId;
+//    }
 }
 
